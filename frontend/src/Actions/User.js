@@ -1,7 +1,7 @@
 import axios from "axios";
 import { forgotPasswordEndpoint, loginEndpoint, logoutEndpoint, registerEndpoint, resetPasswordEndpoint, updatePasswordEndpoint } from "../endpoints/auth";
 import { myPostsEndpoint, postOfFollowingEndpoint } from "../endpoints/post";
-import { deleteMyProfileEndpoint, followUserEndpoint, myProfileEndpoint, updateProfileEndpoint, userPostsEndpoint, userProfileEndpoint } from "../endpoints/user";
+import { deleteMyProfileEndpoint, followUserEndpoint, getAllUsersEndpoint, myProfileEndpoint, updateProfileEndpoint, userPostsEndpoint, userProfileEndpoint } from "../endpoints/user";
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
@@ -107,7 +107,7 @@ export const getAllUsers = (name = "") =>
         type: "allUsersRequest",
       });
 
-      const { data } = await axios.get(`${getAllUsers}?name=${name}`, {
+      const { data } = await axios.get(`${getAllUsersEndpoint}?name=${name}`, {
         withCredentials: true,
         credentials: 'include'
       });
