@@ -507,3 +507,11 @@ exports.getUserPosts = async (req, res) => {
     });
   }
 };
+
+
+exports.test = async (req, res)=>{
+  res.json({
+    success: true,
+    data: "API Working"
+  })
+}

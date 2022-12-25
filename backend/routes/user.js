@@ -14,10 +14,12 @@ const {
   resetPassword,
   getMyPosts,
   getUserPosts,
+  test
 } = require("../controllers/user");
 const { isAuthenticated } = require("../middlewares/auth");
 const router = express.Router();
 
+router.route("/test").get(test);
 router.route("/register").post(register);
 
 router.route("/login").post(login);
